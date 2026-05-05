@@ -24,7 +24,7 @@ the scaffold handles orchestration, sandboxing, parallelism, and reporting.
 Requires Python 3.12+.
 
 ```bash
-git clone https://github.com/yourname/glasspane.git
+git clone https://github.com/WesleyGilesCMM/glasspane.git
 cd glasspane
 pip install -e .
 ```

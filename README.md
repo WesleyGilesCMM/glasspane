@@ -88,6 +88,31 @@ template.
 4. **Report** — results render to the output directory as JSON plus a
    human-readable summary.
 
+## Using the Claude Code Skill
+
+Glasspane ships as a Claude Code slash-command skill (`/glasspane-scan`). To
+install it, copy the skill and its supporting agents to your user-level
+`.claude` directory:
+
+```bash
+# Copy the skill
+cp -r .claude/skills/glasspane-scan ~/.claude/skills/
+
+# Copy the agents the skill depends on
+cp -r .claude/agents/glasspane-*.md ~/.claude/agents/
+```
+
+Once installed, open Claude Code in **any** project and run:
+
+```
+/glasspane-scan /path/to/repo
+```
+
+If no path is given, the current working directory is scanned. The skill
+orchestrates the full 7-phase pipeline (RECON → RANK → ANALYZE → CHAIN →
+VALIDATE → REPORT → POC) and writes results to a `glasspane-output/` directory
+inside the target repo.
+
 ## Security
 
 Glasspane is a static-analysis aid, not a guarantee. Always review findings
